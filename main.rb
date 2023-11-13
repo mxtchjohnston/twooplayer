@@ -1,3 +1,6 @@
+require "./game.rb"
 
-while player1.lives > 0 || player2.lives > 0
+game = Game.new
+game.run
+puts "ended"
   
