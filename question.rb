@@ -1,27 +1,13 @@
 class Question
-  attr_accessor :ans
+  attr_reader :ans
   def initialize
-    @term1 = rand(1..20)
-    @term2 = rand(1..20)
+    @term_1 = rand(1..20)
+    @term_2 = rand(1..20)
     @op = ['+','-','*','/'].sample
-    @ans = perform_calc
-  end
-
-  def perform_calc
-    options = {
-      '+' => @term1 + @term2,
-      '-' => @term1 - @term2,
-      '*' => @term1 * @term2,
-      '/' => @term1 / @term2 
-    }
-
-    options[@op]
+    @ans = @term_1.send(@op, @term_2)
   end
 
   def to_s
-    "#{@term1} #{@op} #{@term2} = #{@ans}"
+    "What does #{@term_1} #{@op} #{@term_2} equal?"
   end
 end
-
-q = Question.new
-puts q.to_s
