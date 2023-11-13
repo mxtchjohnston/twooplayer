@@ -33,6 +33,7 @@ class Game
       switch_player
 
     end
+    puts "#{@current_player.name} is the winner with a score of #{@current_player.lives}/3"
     puts "---- GAME OVER -----"
   end
 end
